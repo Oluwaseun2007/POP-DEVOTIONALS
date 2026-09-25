@@ -1,6 +1,8 @@
 import Link from "next/link";
 import TodayDevotionalCard from "@/components/TodayDevotionalCard";
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   return (
     <div className="space-y-20">
