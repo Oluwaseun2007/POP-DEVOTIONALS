@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation';
 import { getTodayString } from '@/lib/utils';
 import { adminDb } from '@/lib/firebaseAdmin';
 
+export const dynamic = 'force-dynamic';
+
 export default async function TodayPage() {
   const today = getTodayString();
   const snapshot = await adminDb
@@ -19,6 +21,7 @@ export default async function TodayPage() {
       </div>
     );
   }
+
   const devotionalId = snapshot.docs[0].id;
   redirect(`/devotional/${devotionalId}`);
 }
