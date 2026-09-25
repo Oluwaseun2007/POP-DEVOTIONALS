@@ -1,0 +1,55 @@
+pop-devotional/
+├── .env.example
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+├── README.md
+├── lib/
+│   ├── firebase.ts
+│   ├── firebaseAdmin.ts
+│   ├── utils.ts
+│   └── scheduling.ts
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── devotional/
+│   │   ├── today/page.tsx
+│   │   └── [id]/page.tsx
+│   ├── archive/page.tsx
+│   ├── search/page.tsx
+│   ├── about/page.tsx
+│   ├── writers/page.tsx
+│   ├── contact/page.tsx
+│   ├── support/page.tsx
+│   └── admin/
+│       ├── layout.tsx
+│       ├── page.tsx
+│       ├── login/page.tsx
+│       ├── devotionals/
+│       │   ├── page.tsx
+│       │   ├── new/page.tsx
+│       │   └── [id]/edit/page.tsx
+│       ├── series/page.tsx
+│       ├── media/page.tsx
+│       ├── settings/page.tsx
+│       └── import/page.tsx
+├── components/
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   ├── DevotionalReader.tsx
+│   ├── TodayDevotionalCard.tsx
+│   ├── DevotionalForm.tsx
+│   ├── BulkImport.tsx
+│   └── StatsCard.tsx
+└── api/
+    ├── devotionals/
+    │   ├── today/route.ts
+    │   ├── [id]/route.ts
+    │   └── archive/route.ts
+    ├── search/route.ts
+    └── admin/
+        ├── devotionals/route.ts
+        ├── devotionals/[id]/route.ts
+        └── import/route.ts
