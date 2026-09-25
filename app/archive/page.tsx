@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { adminDb } from '@/lib/firebaseAdmin';
 import { getTodayString } from '@/lib/utils';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ArchivePage() {
   const today = getTodayString();
   const snapshot = await adminDb

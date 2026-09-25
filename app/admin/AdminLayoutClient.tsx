@@ -7,14 +7,13 @@ import { onAuthStateChanged, User } from 'firebase/auth';
 import { verifyAdmin } from '@/lib/adminAuth';
 import Link from 'next/link';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const pathname = usePathname();
 
-  // Skip the auth check on the login page itself
   const isLoginPage = pathname === '/admin/login';
 
   useEffect(() => {
@@ -22,6 +21,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       setLoading(false);
       return;
     }
+
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
@@ -33,6 +33,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       }
       setLoading(false);
     });
+
     return () => unsubscribe();
   }, [router, isLoginPage]);
 
